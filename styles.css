@@ -6,15 +6,24 @@ body {
 h1 {
     display: inline-block;
     height: 100vh;
-    width: 200px;
     background-color: #1F1F3C;
     color: fff;
     margin-top: 0;
     text-align: center;
+    padding-top: 30px; 
+    font-size: 70px; 
+    width: 22%; 
 }
 
 .input-form {
     background-color: #A8AAD2;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 87px;
+
 }
 
 .inputs {
@@ -27,17 +36,9 @@ h1 {
 }
 
 main {
-    width: 75vw;
+    width: 78%;
     height: 100vh;
     flex-direction: column;
-}
-
-section {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 form {
@@ -48,10 +49,14 @@ form {
 label {
     margin-right: 10px;
     align-self: center;
+    font-size: 30px; 
+    font-weight: lighter; 
+
 }
 
 .inputField {
     width: 50rem;
+    border: solid #1F1F3C 4px;
 }
 
 .body {
@@ -59,9 +64,22 @@ label {
 }
 
 button {
-    font-size: 20px;
+    font-size: 40px;
     background-color: #1F1F3C;
     color: fff;
     border: none;
-    width: 30rem;
+    width: 50rem; 
+    height: 106px;
+    
+}
+/* .title {
+    margin-bottom: 60px; 
+} */
+form.title {
+    margin-bottom: 60px; 
+    height: 70px;
+}
+form.body {
+    height: 110px; 
+    margin-bottom: 35px; 
 }
