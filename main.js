@@ -2,10 +2,11 @@ var button = document.querySelector('.submit')
 var title = document.querySelector('#titleInput')
 var body = document.querySelector('#bodyInput')
 var ideaSection = document.querySelector('.inputs')
-var inputFields = document.querySelector('.inputField')
 var inputForm = document.querySelector('.input-form')
+var deleteButton = document.querySelector('.delete-button')
 
 inputForm.addEventListener('input', enableSaveButton)
+
 
 var ideas = [];
 
@@ -19,15 +20,19 @@ function addIdea(title, body){
 }
 
 button.addEventListener('click', function(){
-addIdea(title.value, body.value);
-rendorIdea(ideas);
+  addIdea(title.value, body.value);
+  renderIdea(ideas);
+  title.value = ''
+  body.value = ''
+  button.disabled = true
 }); 
 
-function rendorIdea(allIdeas){
+function renderIdea(allIdeas){
   ideaSection.innerHTML = '';
   for(var i = 0; i < allIdeas.length; i++){
     ideaSection.insertAdjacentHTML ("afterbegin", 
 `<div class='userIdeaBox'>
+<header> <img src="./Assets/delete.svg" class="delete-button" id=${allIdeas[i].id}> </header>
 <h3>${allIdeas[i].title}</h3>
 <p> ${allIdeas[i].body}</p>
 </div>
@@ -35,10 +40,17 @@ function rendorIdea(allIdeas){
   }  
 }
 
-function enableSaveButton() {
-  console.log(title.value.length)
-  console.log(body.value.length) 
+function enableSaveButton() { 
   if (title.value.length > 1  && body.value.length > 1) {
     button.disabled = false
   }
 }
+
+ideaSection.addEventListener('click', function(event) {
+   var deleteIdea = Number(event.target.id)
+   for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].id === deleteIdea) {
+      ideas.splice(i, 1)
+    }
+   } renderIdea(ideas);
+})
