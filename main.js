@@ -2,6 +2,10 @@ var button = document.querySelector('.submit')
 var title = document.querySelector('#titleInput')
 var body = document.querySelector('#bodyInput')
 var ideaSection = document.querySelector('.inputs')
+var inputFields = document.querySelector('.inputField')
+var inputForm = document.querySelector('.input-form')
+
+inputForm.addEventListener('input', enableSaveButton)
 
 var ideas = [];
 
@@ -29,4 +33,12 @@ function rendorIdea(allIdeas){
 </div>
 `)
   }  
+}
+
+function enableSaveButton() {
+  console.log(title.value.length)
+  console.log(body.value.length) 
+  if (title.value.length > 1  && body.value.length > 1) {
+    button.disabled = false
+  }
 }

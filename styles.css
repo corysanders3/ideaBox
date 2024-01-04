@@ -20,6 +20,7 @@ h1 {
     background-color: #A8AAD2;
     height: 50vh;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
@@ -31,7 +32,6 @@ h1 {
     background-color: #EAEAF4;
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
-    grid-gap: 10px; 
     overflow: scroll;
     height: 50vh; 
 }
@@ -61,8 +61,9 @@ label {
 }
 
 .inputField {
-    width: 50rem;
+    width: 104rem;
     border: solid #1F1F3C 4px;
+    font-size: 2em;
 }
 
 .body {
@@ -74,9 +75,13 @@ button {
     background-color: #1F1F3C;
     color: fff;
     border: none;
-    width: 50rem; 
-    height: 106px;
-    
+    width: 104rem; 
+    height: 106px; 
+}
+
+button:disabled {
+    background-color: #9d9da4;
+    cursor: not-allowed;
 }
 
 form.title {
@@ -90,10 +95,13 @@ form.body {
 
 .userIdeaBox {
     background-color: white;
-    border: solid #1F1F3C 3px;
-    width: 300px; 
-    height: 340px; 
+    border: solid #1F1F3C 6px;
+    width: 450px; 
+    height: 550px; 
     margin-left: 20%;
     margin-top: 10%;
     position: relative; 
+    text-align: center;
+    font-size: 2em;
+    overflow: scroll;
 }
