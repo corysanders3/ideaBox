@@ -105,3 +105,13 @@ form.body {
     font-size: 2em;
     overflow: scroll;
 }
+
+header {
+    height: 100px;
+    background-color: #1F1F3C;
+    text-align: right;
+}
+
+img {
+    height: 100px
+}
