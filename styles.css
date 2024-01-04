@@ -1,6 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    background-color: #EAEAF4;
 }
 
 h1 {
@@ -28,6 +29,11 @@ h1 {
 
 .inputs {
     background-color: #EAEAF4;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 10px; 
+    overflow: scroll;
+    height: 50vh; 
 }
 
 .flex {
@@ -72,9 +78,7 @@ button {
     height: 106px;
     
 }
-/* .title {
-    margin-bottom: 60px; 
-} */
+
 form.title {
     margin-bottom: 60px; 
     height: 70px;
@@ -82,4 +86,14 @@ form.title {
 form.body {
     height: 110px; 
     margin-bottom: 35px; 
+}
+
+.userIdeaBox {
+    background-color: white;
+    border: solid #1F1F3C 3px;
+    width: 300px; 
+    height: 340px; 
+    margin-left: 20%;
+    margin-top: 10%;
+    position: relative; 
 }
