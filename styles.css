@@ -114,7 +114,17 @@ header {
 }
 
 img {
-    height: 100px
+    height: 100px;
+}
+
+.star {
+    height: 100px;
+    background: url("./Assets/star.svg");
+}
+
+.favorite {
+    height: 100px;
+    background: url("./Assets/star-active.svg");
 }
 
 .hidden {
