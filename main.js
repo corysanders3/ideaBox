@@ -32,7 +32,11 @@ function renderIdea(allIdeas){
   for(var i = 0; i < allIdeas.length; i++){
     ideaSection.insertAdjacentHTML ("afterbegin", 
 `<div class='userIdeaBox'>
-<header> <img src="./Assets/delete.svg" class="delete-button" id=${allIdeas[i].id}> </header>
+<header> 
+<img src="./Assets/star.svg" class="favorite-button" >
+<img src="./Assets/star-active.svg" class="favorite-button hidden" >
+<img src="./Assets/delete.svg" class="delete-button" id=${allIdeas[i].id}>
+</header>
 <h3>${allIdeas[i].title}</h3>
 <p> ${allIdeas[i].body}</p>
 </div>
@@ -53,4 +57,11 @@ ideaSection.addEventListener('click', function(event) {
       ideas.splice(i, 1)
     }
    } renderIdea(ideas);
+
+   var favorite = event.target.parentNode.children[0]
+   var favoriteActive = event.target.parentNode.children[1]
+   favorite.classList.toggle('hidden')
+   favoriteActive.classList.toggle('hidden')
+   console.log('favorite: ', favorite.classList)
+   console.log('favorite active: ', favoriteActive.classList)
 })
