@@ -109,9 +109,14 @@ form.body {
 header {
     height: 100px;
     background-color: #1F1F3C;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 img {
     height: 100px
+}
+
+.hidden {
+    display: none!important;
 }
