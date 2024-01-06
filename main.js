@@ -7,6 +7,7 @@ var deleteButton = document.querySelector('.delete-button')
 var viewType = document.querySelector('.viewType')
 
 inputForm.addEventListener('input', enableSaveButton)
+viewType.addEventListener('click', changeView)
 
 var ideas = [];
 var favIdeas = [];
@@ -23,13 +24,10 @@ function addIdea(title, body){
   ideas.push(newIdea)
 }
 
-
-viewType.addEventListener('click', changeView)
-
 function changeView() {
   if(viewType.innerText === "Show Starred Ideas") {
     for(var i = 0; i < ideas.length; i++) {
-      if(ideas[i].isFavorited === true && ideas[i].isPushed === false) {
+      if(ideas[i].isFavorited && !ideas[i].isPushed) {
         ideas[i].isPushed = true
         favIdeas.push(ideas[i])
       }
@@ -48,21 +46,20 @@ button.addEventListener('click', function(){
   title.value = ''
   body.value = ''
   button.disabled = true
-}); 
+}) 
 
 function renderIdea(allIdeas){
   ideaSection.innerHTML = '';
   for(var i = 0; i < allIdeas.length; i++){
     ideaSection.innerHTML +=
-`<div class='userIdeaBox'>
-<header> 
-<img src=${allIdeas[i].star} class="star">
-<img src="./Assets/delete.svg" class="delete-button" id=${allIdeas[i].id}>
-</header>
-<h3>${allIdeas[i].title}</h3>
-<p> ${allIdeas[i].body}</p>
-</div>
-`
+      `<div class='userIdeaBox'>
+        <header> 
+        <img src=${allIdeas[i].star} class="star">
+        <img src="./Assets/delete.svg" class="delete-button" id=${allIdeas[i].id}>
+        </header>
+        <h3>${allIdeas[i].title}</h3>
+        <p> ${allIdeas[i].body}</p>
+      </div>`
   }
 }
 
@@ -87,41 +84,39 @@ ideaSection.addEventListener('click', function(event){
     var cardId = Number(event.target.parentNode.children[1].id)
     for(var i = 0; i < ideas.length; i++) {
       if(ideas[i].id === cardId) {
-        if(ideas[i].isFavorited === false){
+        if(!ideas[i].isFavorited){
           ideas[i].isFavorited = true
-        } else if (ideas[i].isFavorited === true) {
+        } else if (ideas[i].isFavorited) {
           ideas[i].isFavorited = false
           ideas[i].isPushed = false
-          for(i=0; i < favIdeas.length; i++) {
-            if(favIdeas[i].id === cardId) {
-              favIdeas.splice(i,1)
+          for(var x = 0; x < favIdeas.length; x++) {
+            if(favIdeas[x].id === cardId) {
+              favIdeas.splice(x,1)
             }
           }
         }
       }
     }
   }
-  isTrue()
+  isTrue(ideas);
+  isTrue(favIdeas);
+  displayIdea();
 });
 
-function isTrue() {
-  if(viewType.innerText === 'Show Starred Ideas') {
-  for(var i = 0; i < ideas.length; i++) {
-    if(ideas[i].isFavorited === true) {
-      ideas[i].star = "./Assets/star-active.svg"
+function isTrue(array) {
+  for(var i = 0; i < array.length; i++) {
+    if(array[i].isFavorited) {
+      array[i].star = "./Assets/star-active.svg"
     } else {
-      ideas[i].star = "./Assets/star.svg"
+      array[i].star = "./Assets/star.svg"
     }
-  }
-  renderIdea(ideas)
-} else {
-  for(var i = 0; i < favIdeas.length; i++) {
-    if(favIdeas[i].isFavorited === true) {
-      favIdeas[i].star = "./Assets/star-active.svg"
-    } else {
-      favIdeas[i].star = "./Assets/star.svg"
-    }
-  }
-  renderIdea(favIdeas)
+  } 
 }
+
+function displayIdea(){
+  if(viewType.innerText === 'Show Starred Ideas'){
+    renderIdea(ideas)
+  } else {
+    renderIdea(favIdeas)
+  }
 }
