@@ -4,10 +4,12 @@ var body = document.querySelector('#bodyInput')
 var ideaSection = document.querySelector('.inputs')
 var inputForm = document.querySelector('.input-form')
 var deleteButton = document.querySelector('.delete-button')
+var viewType = document.querySelector('.viewType')
 
 inputForm.addEventListener('input', enableSaveButton)
 
 var ideas = [];
+var favIdeas = [];
 
 function addIdea(title, body){
     var newIdea = {
@@ -15,9 +17,29 @@ function addIdea(title, body){
         body: body,
         id: Date.now(),
         isFavorited: false,
-        star: "./Assets/star.svg"
+        star: "./Assets/star.svg",
+        isPushed: false
     }
   ideas.push(newIdea)
+}
+
+
+viewType.addEventListener('click', changeView)
+
+function changeView() {
+  if(viewType.innerText === "Show Starred Ideas") {
+    for(var i = 0; i < ideas.length; i++) {
+      if(ideas[i].isFavorited === true && ideas[i].isPushed === false) {
+        ideas[i].isPushed = true
+        favIdeas.push(ideas[i])
+      }
+    }
+    renderIdea(favIdeas)
+    viewType.innerText = "Show All Ideas"
+  } else {
+      renderIdea(ideas)
+    viewType.innerText = "Show Starred Ideas"
+  }
 }
 
 button.addEventListener('click', function(){
@@ -34,7 +56,7 @@ function renderIdea(allIdeas){
     ideaSection.innerHTML +=
 `<div class='userIdeaBox'>
 <header> 
-<img src=${ideas[i].star} class="star">
+<img src=${allIdeas[i].star} class="star">
 <img src="./Assets/delete.svg" class="delete-button" id=${allIdeas[i].id}>
 </header>
 <h3>${allIdeas[i].title}</h3>
@@ -69,6 +91,12 @@ ideaSection.addEventListener('click', function(event){
           ideas[i].isFavorited = true
         } else if (ideas[i].isFavorited === true) {
           ideas[i].isFavorited = false
+          ideas[i].isPushed = false
+          for(i=0; i < favIdeas.length; i++) {
+            if(favIdeas[i].id === cardId) {
+              favIdeas.splice(i,1)
+            }
+          }
         }
       }
     }
@@ -77,6 +105,7 @@ ideaSection.addEventListener('click', function(event){
 });
 
 function isTrue() {
+  if(viewType.innerText === 'Show Starred Ideas') {
   for(var i = 0; i < ideas.length; i++) {
     if(ideas[i].isFavorited === true) {
       ideas[i].star = "./Assets/star-active.svg"
@@ -85,5 +114,14 @@ function isTrue() {
     }
   }
   renderIdea(ideas)
+} else {
+  for(var i = 0; i < favIdeas.length; i++) {
+    if(favIdeas[i].isFavorited === true) {
+      favIdeas[i].star = "./Assets/star-active.svg"
+    } else {
+      favIdeas[i].star = "./Assets/star.svg"
+    }
+  }
+  renderIdea(favIdeas)
 }
-
+}
