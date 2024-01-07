@@ -7,7 +7,7 @@ body {
 h1 {
     color: #EAEAF4;;
     margin-top: 0;
-    font-size: 70px;
+    font-size: 5vw;
     margin-bottom: 12px;
 }
 
@@ -15,11 +15,9 @@ h1 {
     background-color: #A8AAD2;
     height: 484px;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    padding-right: 87px;
+    padding-right: 10%;
 }
 
 .inputs {
@@ -27,7 +25,7 @@ h1 {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
     overflow-x: auto;
-    height: 50vh; 
+    height: 60vh; 
 }
 
 .flex {
@@ -44,21 +42,24 @@ main {
 form {
     display: flex;
     flex-direction: row;
+    height: 110px; 
+    margin-bottom: 35px; 
+    width: 100%;
+    justify-content: end;
 }
 
 label {
     margin-right: 10px;
     align-self: center;
-    font-size: 30px; 
+    font-size: 2vw; 
     font-weight: lighter; 
 }
 
 .inputField {
-    width: 80rem;
+    width: 80%;
     border: solid #1F1F3C 4px;
-    font-size: 2em;
+    font-size: 1.5vw;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .body {
@@ -66,7 +67,7 @@ label {
 }
 
 button {
-    font-size: 40px;
+    font-size: 2vw;
     background-color: #1F1F3C;
     color: white;
     border: none;
@@ -80,7 +81,7 @@ button:disabled {
 }
 
 form.title {
-    margin-bottom: 60px; 
+    margin-bottom: 60px;
     height: 70px;
 }
 
@@ -92,8 +93,9 @@ form.body {
 .userIdeaBox {
     background-color: white;
     border: solid #1F1F3C 6px;
-    width: 400px;
-    height: 535px;
+    max-width: 450px;
+    width: 80%;
+    height: 35rem;
     margin-left: 8%;
     margin-top: 10%;
     position: relative; 
@@ -104,7 +106,7 @@ form.body {
 }
 
 header {
-    height: 100px;
+    height: 10vh;
     background-color: #1F1F3C;
     display: flex;
     justify-content: space-between;
@@ -138,16 +140,17 @@ header {
 }
 
 .submit { 
-    width: 80.7rem;
+    width: 81%;
+    font-size: 2.5vw;
 }
 
 img {
-    height: 100px;
+    height: 10vh;
 }
 
 h3 {
     color: #1F1F3C;
-    font-size: 1.6em; 
+    font-size: 2.5vw; 
     margin-bottom: 0; 
     margin-top: 30px; 
 }
@@ -155,6 +158,5 @@ h3 {
 p {
     color: #1F1F3C;
     margin-top: 15px; 
-    font-size: 1.2em;  
+    font-size: 2vw;  
 }
-
