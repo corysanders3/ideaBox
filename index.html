@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <title>Thie application allows users to create and display ideas</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +16,16 @@
             <main class="container">
                 <section class="input-form">
                     <form class="input-container title">
-                        <label for="title">Title</label>
+                        <label for="titleInput">Title</label>
                         <input type="text" placeholder='Enter title of idea here.' class="inputField title" id='titleInput' name="title">
                     </form>
                     <form class="input-container body">
-                        <label for="body">Body</label>
+                        <label for="bodyInput">Body</label>
                         <textarea type="text" placeholder='Enter description of idea here.' class="inputField body" id='bodyInput' name="body"></textarea>
+                    </form>
+                    <form class="input-container save">
+                        <button class="submit" disabled>Save</button>          
                     </form>  
-                    <button class="submit" disabled>Save</button>          
                 </section>       
                 <section class="inputs">
                 </section>       
@@ -31,4 +34,3 @@
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
-
