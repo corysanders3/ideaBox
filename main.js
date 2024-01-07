@@ -46,6 +46,7 @@ button.addEventListener('click', function(){
   title.value = ''
   body.value = ''
   button.disabled = true
+  viewType.innerText = "Show Starred Ideas"
 }) 
 
 function renderIdea(allIdeas){
@@ -71,13 +72,29 @@ function enableSaveButton() {
 
 ideaSection.addEventListener('click', function(event) {
    var deleteIdea = Number(event.target.id)
-   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].id === deleteIdea) {
-      ideas.splice(i, 1)
+   updateIdeas(ideas);
+   updateIdeas(favIdeas);
+  //  for (var i = 0; i < ideas.length; i++) {
+  //   if (ideas[i].id === deleteIdea) {
+  //     ideas.splice(i, 1)
+  //   }
+  //  }
+  //  for (var i = 0; i < favIdeas.length; i++) {
+  //   if (favIdeas[i].id === deleteIdea) {
+  //     favIdeas.splice(i, 1)
+  //   }
+  //  }
+    displayIdea();
+})
+
+function updateIdeas(ideasArray) {
+  for (var i = 0; i < ideasArray.length; i++) {
+    if (ideasArray[i].id === deleteIdea) {
+      ideasArray.splice(i, 1)
     }
    }
-   renderIdea(ideas);
-})
+    displayIdea();
+}
 
 ideaSection.addEventListener('click', function(event){
   if(event.target.classList.contains('star')) {
