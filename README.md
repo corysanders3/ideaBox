@@ -4,7 +4,7 @@
 Coming up with a great idea is only great when you can remember it. This app solves that problem by allowing users to create and save an inventory of ideas. With this inventory, you can 'favorite' ideas and filter those out from the rest. You can also delete any ideas you no longer want.
 
 ### Installation Instructions
-To use this app, go to this GitHub repository https://github.com/corysanders3/ideaBox and fork and clone the repository onto your computer. Open the file and start saving your ideas!
+To use this app, go to this [GitHub repository](https://github.com/corysanders3/ideaBox) and fork and clone the repository onto your computer. Open the file and start saving your ideas!
 
 ### Preview of App
 ![image](./Assets/IdeaBox.png)
