@@ -4,13 +4,25 @@
 Coming up with a great idea is only great when you can remember it. This app solves that problem by allowing users to create and save an inventory of ideas. With this inventory, you can 'favorite' ideas and filter those out from the rest. You can also delete any ideas you no longer want.
 
 ### Installation Instructions:
-To use this app, go to this [GitHub repository](https://github.com/corysanders3/ideaBox) and fork and clone the repository onto your computer. Open the file and start saving your ideas!
+Here are the steps to clone the app:
+1. Go to this link [Idea Box](https://github.com/corysanders3/ideaBox).
+2. Click the 'Code' dropdown and click 'Copy URL to clipboard'.
+3. Within your terminal, run 'git clone' and paste what you have copied.
+4. cd into the ideaBox directory.
+5. Open it within your code editor.
+6. Run open index.html.
+7. Start saving those ideas.
 
 ### Preview of App:
 ![image](./Assets/IdeaBox.png)
 
+
+![image](https://github.com/corysanders3/ideaBox/assets/41808895/19baca24-d6a4-4288-8806-5acff82801c0)
+
+
+
 ### Context:
-We worked on this project for ~18 hours. All contributors are in Mod 1.
+We worked on this project for ~18 hours. All contributors are 4 weeks into the Turing School of Software & Design.
 
 ### Contributors:
 [Cory Sanders](https://github.com/corysanders3/)
@@ -19,14 +31,17 @@ We worked on this project for ~18 hours. All contributors are in Mod 1.
 [Megan Crotteau](https://github.com/crotteau)
 
 ### Learning Goals:
-- Gain an understanding of how to write clean HTML and CSS to match a provided comp
-- Understand how a developer might separate the data model from the DOM model
-- Incorporate & iterate over arrays in order to filter what is being displayed
-- Craft code with clean style, using small functions that show trends toward DRYness, SRP, and purity
+1. Gain an understanding of how to write clean HTML and CSS to match a provided comp
+2. Understand how a developer might separate the data model from the DOM model
+3. Incorporate & iterate over arrays in order to filter what is being displayed
+4. Craft code with clean style, using small functions that show trends toward DRYness, SRP, and purity
 
 ### Wins + Challenges:
-One main challenge we faced was getting accurate CSS styling to the provided comp and ensuring that our app was pixel perfect-ish. 
-A major win for us was navigating working with a group of 4 on this project. We felt more confident with this project and this allowed for more troubleshooting and fixing bugs. Also, having more time during the day to work on this project helped in this success. 
+Wins:
+1. A major win for us was navigating working with a group of 4 on this project. We felt more confident with this project and this allowed for more troubleshooting and fixing bugs. Also, having more time during the day to work on this project helped in this success.
+
+Challenges:
+2. One main challenge we faced was getting accurate CSS styling to the provided comp and ensuring that our app was pixel perfect-ish. 
 
 ### Deployed Page:
 [Idea Box](https://corysanders3.github.io/ideaBox/)
