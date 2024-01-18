@@ -14,12 +14,7 @@ Here are the steps to clone the app:
 7. Start saving those ideas.
 
 ### Preview of App:
-![image](./Assets/IdeaBox.png)
-
-
-![image2](https://github.com/corysanders3/ideaBox/assets/41808895/19baca24-d6a4-4288-8806-5acff82801c0)
-
-
+![Idea Box](https://github.com/corysanders3/ideaBox/assets/41808895/1386ddf6-ba73-4bdb-be80-6491fa959893)
 
 ### Context:
 We worked on this project for ~18 hours. All contributors are 4 weeks into the Turing School of Software & Design.
