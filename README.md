@@ -17,7 +17,7 @@ Here are the steps to clone the app:
 ![image](./Assets/IdeaBox.png)
 
 
-![image](https://github.com/corysanders3/ideaBox/assets/41808895/19baca24-d6a4-4288-8806-5acff82801c0)
+![image2](https://github.com/corysanders3/ideaBox/assets/41808895/19baca24-d6a4-4288-8806-5acff82801c0)
 
 
 
